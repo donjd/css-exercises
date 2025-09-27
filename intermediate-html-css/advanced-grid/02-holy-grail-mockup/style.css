@@ -169,3 +169,16 @@ li {
 .footer {
   grid-area: footer;
 }
+
+.nav {
+  grid-area: nav;
+  display: grid;
+  place-items: center;
+}
+
+.nav ul {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+}
