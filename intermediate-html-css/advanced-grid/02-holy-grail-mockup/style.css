@@ -120,12 +120,14 @@ li {
     "sidebar article"
     "footer footer";
   height: 100%;
+  gap: 5px;
 }
 
 .header {
   grid-area: header;
   display: grid;
   grid-template-columns: 1fr 2fr;
+  grid-template-rows: auto;
 }
 
 .logo {
@@ -140,13 +142,20 @@ li {
 
 .menu ul {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
   height: 100%;
   align-items: center;
 }
 
 .sidebar {
   grid-area: sidebar;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.sidebar > * {
+  border-radius: 1px;
 }
 
 .article {
