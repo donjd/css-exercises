@@ -1,6 +1,9 @@
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 .container {
@@ -15,7 +18,8 @@
   color: white;
 }
 
-.header {
+.header,
+.menu {
   background-color: #393f4d;
 }
 
@@ -87,4 +91,72 @@
 .footer p {
   font-size: 13px;
   font-weight: normal;
+}
+
+/**/
+/**/
+/**/
+/*My code*/
+.card {
+  display: none;
+}
+
+body {
+  border: 5px solid green;
+  height: 100vh;
+}
+
+li {
+  list-style: none;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: auto auto 1fr auto;
+  grid-template-areas:
+    "header header"
+    "sidebar nav"
+    "sidebar article"
+    "footer footer";
+  height: 100%;
+}
+
+.header {
+  grid-area: header;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.logo {
+  text-align: left;
+}
+
+.menu {
+  grid-area: menu;
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+.menu ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  height: 100%;
+  align-items: center;
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+.article {
+  grid-area: article;
+}
+
+.card {
+  grid-area: card;
+}
+
+.footer {
+  grid-area: footer;
 }
